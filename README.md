@@ -104,29 +104,6 @@ Drop images into `public/images/` and reference them by path:
 
 ---
 
-## Deploying to Vercel
-
-### Option A — Vercel CLI
-```bash
-npm install -g vercel
-vercel
-```
-
-### Option B — GitHub + Vercel Dashboard
-1. Push this repo to GitHub
-2. Go to [vercel.com](https://vercel.com) → "Add New Project"
-3. Import your repo — Vercel auto-detects Next.js
-4. Click Deploy
-
-After deploy, update `data/site.ts`:
-```ts
-url: "https://your-site.vercel.app",
-```
-
-Re-deploy whenever you update content in `/data/`.
-
----
-
 ## Project Structure
 
 ```
@@ -162,11 +139,9 @@ vpog/
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router)  
-- **Styling:** Tailwind CSS + CSS custom properties  
-- **Icons:** Lucide React  
-- **Fonts:** Syne (headings) · Instrument Sans (body) · JetBrains Mono (mono)  
-- **Deployment:** Vercel  
+- **Styling:** Tailwind CSS + CSS custom properties   
+- **Deployment:** Github
 
 ---
 
-Built by V:POG · Vanderbilt University · Nashville, TN · Make games. Build together. 🎮
+Built by V:POG · Vanderbilt University · Nashville, TN · Make games. Build together.
