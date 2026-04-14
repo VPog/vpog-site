@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── BRAND TOKENS ─────────────────────────────── */
+:root {
+  --cyan:       #1aa9d8;
+  --cyan-dark:  #1490bb;
+  --cyan-dim:   rgba(26,169,216,0.15);
+  --gold:       #c9a84c;
+  --gold-light: #e2c97a;
+  --gold-dim:   rgba(201,168,76,0.18);
+
+  --bg:         #0d0d0d;
+  --bg-2:       #111111;
+  --bg-3:       #161616;
+  --surface:    #1a1a1a;
+  --surface-2:  #222222;
+
+  --border:     rgba(255,255,255,0.07);
+  --border-md:  rgba(255,255,255,0.13);
+
+  --text:       #f2f0e8;
+  --text-muted: #9a9690;
+  --text-dim:   #555350;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Press Start 2P for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.font-pixel { font-family: 'Press Start 2P', monospace; line-height: 1.4; }
+.font-mono  { font-family: 'Space Mono', monospace; }
+.font-sans  { font-family: 'DM Sans', sans-serif; }
+
+/* ─── CONTAINER ─────────────────────────────────── */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+}
+
+/* ─── EYEBROW ────────────────────────────────────── */
+.eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* ─── BUTTONS ────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  border: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn-cyan    { background: var(--cyan);  color: #fff; }
+.btn-cyan:hover  { background: var(--cyan-dark); }
+.btn-gold    { background: var(--gold);  color: #0d0d0d; }
+.btn-gold:hover  { background: var(--gold-light); }
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-md);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 12px 0;
+}
+.btn-ghost:hover { color: var(--cyan); }
+
+/* ─── TAGS ───────────────────────────────────────── */
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+/* ─── TICKER ─────────────────────────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+  align-items: center;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+/* ─── SCROLLBAR ──────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+/* ─── FOCUS ──────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+/* ─── CALENDAR ───────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.cal-event-detail { animation: fadeIn 0.2s ease; }

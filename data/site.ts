@@ -1,0 +1,27 @@
+export const siteConfig = {
+  name: "V:POG — Vanderbilt Programmers of Gaming",
+  shortName: "V:POG",
+  description:
+    "Vanderbilt University's student game development organization. Programmers, artists, designers, and musicians building games together in Nashville, TN.",
+  keywords: [
+    "Vanderbilt game development club",
+    "Vanderbilt University gaming organization",
+    "V:POG Vanderbilt",
+    "game dev club Nashville",
+    "college game development",
+    "student game studio",
+    "Vanderbilt CS clubs",
+    "game design Vanderbilt",
+    "game art Vanderbilt",
+    "game music Vanderbilt",
+    "Unity Godot student club Vanderbilt",
+    "Nashville student game developers",
+    "Vanderbilt Programmers of Gaming",
+  ],
+  url: "https://vpog.vercel.app",
+  ogImage: "/og-image.png",
+  discord: "https://discord.gg/sWJFdhaJW9",
+  instagram: "https://www.instagram.com/vandy.pog/",
+  anchorLink: "https://anchorlink.vanderbilt.edu",
+  github: "https://github.com/VPog",
+};
