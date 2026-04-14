@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Code2, Play } from "lucide-react";
+import { img } from "@/lib/basepath";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project, featured }: { project: Project; featured?: boolean }) {
@@ -9,7 +10,7 @@ export function ProjectCard({ project, featured }: { project: Project; featured?
       className="hover:border-[var(--border-md)] hover:-translate-y-1">
       <div style={{ height: "180px", background: `linear-gradient(135deg, ${project.color}18 0%, rgba(13,13,13,0) 100%)`, display: "flex", alignItems: "center", justifyContent: "center", padding: "24px" }}>
         {project.coverImage
-          ? <Image src={project.coverImage} alt={project.title} width={280} height={140} style={{ objectFit: "contain", maxHeight: "140px", filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.5))" }} />
+          ? <Image src={img(project.coverImage)} alt={project.title} width={280} height={140} style={{ objectFit: "contain", maxHeight: "140px", filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.5))" }} />
           : <div style={{ fontSize: "3rem" }}>🎮</div>
         }
       </div>

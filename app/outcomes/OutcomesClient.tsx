@@ -1,4 +1,5 @@
 "use client";
+import { img } from "@/lib/basepath";
 
 import Image from "next/image";
 import { companies } from "@/data/outcomes";
@@ -27,7 +28,7 @@ export default function OutcomesClientPage() {
               <div key={c.id} style={{ background: "var(--surface)", padding: "40px 32px", display: "flex", flexDirection: "column", gap: "20px", transition: "background 0.2s" }}
                 className="hover:bg-[var(--surface-2)]">
                 <div style={{ background: c.logoBg, borderRadius: "4px", padding: c.logoBg === "#000000" ? "12px 16px" : "8px", display: "flex", alignItems: "center", justifyContent: "flex-start", height: "60px", width: "fit-content" }}>
-                  <Image src={c.logo} alt={c.name} width={160} height={44}
+                  <Image src={img(c.logo)} alt={c.name} width={160} height={44}
                     style={{ objectFit: "contain", height: "36px", width: "auto", maxWidth: "160px" }} />
                 </div>
                 <div>

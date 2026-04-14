@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Users } from "lucide-react";
 import { projects } from "@/data/projects";
+import { img } from "@/lib/basepath";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -36,7 +37,7 @@ export default function ProjectsPage() {
                 {idx % 2 === 0 && (
                   <div style={{ background: `linear-gradient(135deg, ${project.color}14 0%, rgba(13,13,13,0) 100%)`, borderRight: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", minHeight: "380px" }}>
                     {project.coverImage ? (
-                      <Image src={project.coverImage} alt={project.title} width={380} height={240}
+                      <Image src={img(project.coverImage)} alt={project.title} width={380} height={240}
                         style={{ objectFit: "contain", maxWidth: "100%", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }} />
                     ) : (
                       /* Clean empty placeholder — no emoji */
@@ -97,7 +98,7 @@ export default function ProjectsPage() {
                 {idx % 2 !== 0 && (
                   <div style={{ background: `linear-gradient(135deg, rgba(13,13,13,0) 0%, ${project.color}14 100%)`, borderLeft: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", minHeight: "380px" }}>
                     {project.coverImage ? (
-                      <Image src={project.coverImage} alt={project.title} width={380} height={240}
+                      <Image src={img(project.coverImage)} alt={project.title} width={380} height={240}
                         style={{ objectFit: "contain", maxWidth: "100%", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }} />
                     ) : (
                       <div style={{ width: "100%", maxWidth: "320px", aspectRatio: "16/9", background: "var(--surface)", border: "1px dashed var(--border-md)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center" }}>

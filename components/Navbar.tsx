@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { img } from "@/lib/basepath";
 
 const navLinks = [
   { href: "/",             label: "Home" },
@@ -40,7 +41,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <Image
-            src="/images/vpog-logo.jpg"
+            src={img("/images/vpog-logo.jpg")}
             alt="V:POG Logo"
             width={40}
             height={40}

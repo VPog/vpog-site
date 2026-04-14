@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import { companies } from "@/data/outcomes";
 import { siteConfig } from "@/data/site";
+import { img } from "@/lib/basepath";
 
 const PS2 = "'Press Start 2P', monospace";
 
@@ -20,7 +21,7 @@ export default function HomePage() {
 
         <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "120px", paddingBottom: "80px" }}>
           <div style={{ marginBottom: "40px" }}>
-            <Image src="/images/vpog-logo.jpg" alt="V:POG" width={64} height={64}
+            <Image src={img("/images/vpog-logo.jpg")} alt="V:POG" width={64} height={64}
               style={{ borderRadius: "10px", boxShadow: "0 0 40px rgba(26,169,216,0.3)" }} />
           </div>
 
@@ -63,7 +64,7 @@ export default function HomePage() {
             {[...companies, ...companies, ...companies, ...companies].map((c, i) => (
               <div key={`${c.id}-${i}`} style={{ display: "flex", alignItems: "center", padding: "0 56px", borderRight: "1px solid var(--border)", height: "64px", flexShrink: 0 }}>
                 <div style={{ background: c.logoBg, borderRadius: "3px", padding: c.logoBg === "#ffffff" ? "6px 14px" : "4px", display: "flex", alignItems: "center", height: "40px" }}>
-                  <Image src={c.logo} alt={c.name} width={130} height={34}
+                  <Image src={img(c.logo)} alt={c.name} width={130} height={34}
                     style={{ objectFit: "contain", height: "28px", width: "auto", maxWidth: "130px" }} />
                 </div>
               </div>
@@ -78,7 +79,7 @@ export default function HomePage() {
           <span className="eyebrow">Featured Project</span>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", background: "var(--surface)", border: "1px solid var(--border)", borderRadius: "4px", overflow: "hidden" }} className="project-featured-grid">
             <div style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.1), rgba(26,169,216,0.06))", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "320px", padding: "48px", borderRight: "1px solid var(--border)" }}>
-              <Image src="/images/coffeepocalypse-logo.png" alt="Coffeepocalypse" width={340} height={220}
+              <Image src={img("/images/coffeepocalypse-logo.png")} alt="Coffeepocalypse" width={340} height={220}
                 style={{ objectFit: "contain", maxWidth: "100%", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.45))" }} />
             </div>
             <div style={{ padding: "40px" }}>

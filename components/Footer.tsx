@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { img } from "@/lib/basepath";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,7 +13,7 @@ export function Footer() {
 
           {/* Brand */}
           <div>
-            <Image src="/images/vpog-logo.jpg" alt="V:POG" width={44} height={44}
+            <Image src={img("/images/vpog-logo.jpg")} alt="V:POG" width={44} height={44}
               style={{ borderRadius: "6px", marginBottom: "14px" }} />
             <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", lineHeight: 1.7, maxWidth: "240px" }}>
               Vanderbilt University&rsquo;s student game development organization.
